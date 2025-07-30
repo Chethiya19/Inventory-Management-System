@@ -3,12 +3,12 @@ import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-dashboard',
-  template: `
-    <h2>Welcome to Dashboard</h2>
-    <button (click)="logout()">Logout</button>
-  `
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+  username = 'User'; // Optional: You can set from authService if available
+
   constructor(private auth: AuthService) {}
 
   logout() {

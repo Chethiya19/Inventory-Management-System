@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { CommonModule } from '@angular/common';  // for *ngIf, *ngFor etc.
-import { FormsModule } from '@angular/forms';    // for ngModel
-import { RouterModule } from '@angular/router';  // if using routerLink or navigation
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms'; 
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],  // <-- IMPORT MODULES HERE
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
