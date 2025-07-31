@@ -3,7 +3,7 @@
     <h4>Inventory Management System</h4>
   </div>
   <div class="header-right">
-    Welcome, {{ username }} |
+    Welcome, {{ username || 'User' }} |
     <button (click)="logout()">Logout</button>
   </div>
 </header>

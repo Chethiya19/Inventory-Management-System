@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
@@ -7,14 +6,18 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
+export class HeaderComponent implements OnInit {
+  username: string | null = '';
 
-export class HeaderComponent {
-  username = localStorage.getItem('username'); // adjust as per your auth logic
+  constructor(private authService: AuthService) {}
 
-  constructor(private router: Router) {}
+  ngOnInit(): void {
+    this.authService.username$.subscribe((name) => {
+      this.username = name;
+    });
+  }
 
-  logout() {
-    localStorage.clear(); // or just remove token/username
-    this.router.navigate(['/login']);
+  logout(): void {
+    this.authService.logout();
   }
 }

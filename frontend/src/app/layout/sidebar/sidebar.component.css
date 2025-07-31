@@ -20,8 +20,11 @@
   text-decoration: none;
   font-weight: 600;
 }
-.sidebar-nav ul li a.active-link,
-.sidebar-nav ul li a:hover {
+.sidebar-nav ul li a.active-link {
   background-color: #1abc9c;
   color: white;
+}
+
+.sidebar-nav ul li a:hover {
+    color: yellow;
 }

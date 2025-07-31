@@ -1,0 +1,38 @@
+<div class="product-list-header">
+  <h2>Product List</h2>
+
+  <div class="header-controls">
+    <input type="text" placeholder="Search products..." [(ngModel)]="searchText" />
+    <button (click)="goToAddProduct()">Add Product</button>
+  </div>
+</div>
+
+<table class="product-table">
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>Brand</th>
+      <th>Model</th>
+      <th>Storage</th>
+      <th>Color</th>
+      <th>Price (LKR)</th>
+      <th>Stock Qty</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of filteredProducts()">
+      <td>{{ product.name }}</td>
+      <td>{{ product.brand }}</td>
+      <td>{{ product.model }}</td>
+      <td>{{ product.storage }}</td>
+      <td>{{ product.color }}</td>
+      <td>{{ product.price | number:'1.0-0' }}</td>
+      <td>{{ product.stock_qty }}</td>
+      <td class="actions-cell">
+        <button class="btn edit-btn" (click)="editProduct(product.id)">Edit</button>
+        <button class="btn delete-btn" (click)="deleteProduct(product.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

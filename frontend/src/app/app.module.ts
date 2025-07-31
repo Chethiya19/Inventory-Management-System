@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';       // For *ngFor etc.
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';         // For [(ngModel)]
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 
-// 👇 Import your standalone components instead of declaring them
+// Import standalone components
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
@@ -11,15 +15,21 @@ import { HeaderComponent } from './layout/header/header.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { DashboardLayoutComponent } from './layout/dashboard-layout/dashboard-layout.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { ProductsComponent } from './components/products/products.component';
+import { AddProductComponent } from './components/products/add-product/add-product.component';
+import { ProductListComponent } from './components/products/product-list/product-list.component';
 import { OrdersComponent } from './components/orders/orders.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    CommonModule,       // Needed for directives like *ngFor
+    FormsModule,        // Needed for ngModel binding
+    RouterModule,
+    ReactiveFormsModule,
 
-    // Import standalone components
+    // Standalone components imported here
     AppComponent,
     LoginComponent,
     RegisterComponent,
@@ -27,7 +37,8 @@ import { OrdersComponent } from './components/orders/orders.component';
     SidebarComponent,
     DashboardLayoutComponent,
     DashboardComponent,
-    ProductsComponent,
+    AddProductComponent,
+    ProductListComponent,
     OrdersComponent
   ],
   bootstrap: [AppComponent]

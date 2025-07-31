@@ -7,11 +7,14 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 import { DashboardLayoutComponent } from './layout/dashboard-layout/dashboard-layout.component';
 
-import { ProductsComponent } from './components/products/products.component';
+import { ProductListComponent } from './components/products/product-list/product-list.component';
+import { AddProductComponent } from './components/products/add-product/add-product.component';
+import { EditProductComponent } from './components/products/edit-product/edit-product.component';
+
 import { OrdersComponent } from './components/orders/orders.component';
 import { AuthGuard } from './guards/auth.guard';
 
-export const routes: Routes = [ 
+export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
@@ -21,7 +24,9 @@ export const routes: Routes = [
     component: DashboardLayoutComponent,
     children: [
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'products', component: ProductsComponent },
+      { path: 'products', component: ProductListComponent },
+      { path: 'add-product', component: AddProductComponent },
+      { path: 'edit-product/:id', component: EditProductComponent },
       { path: 'orders', component: OrdersComponent }
     ]
   }
@@ -31,4 +36,4 @@ export const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

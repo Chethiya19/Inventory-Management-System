@@ -1,0 +1,44 @@
+<div class="edit-product-container">
+  <h2>✏️ Edit Product</h2>
+
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="product-form">
+    <div class="form-row-group">
+      <div class="form-row">
+        <label for="name">Product Name</label>
+        <input id="name" type="text" formControlName="name" placeholder="Enter product name" required />
+      </div>
+      <div class="form-row">
+        <label for="brand">Brand</label>
+        <input id="brand" type="text" formControlName="brand" placeholder="Enter brand" required />
+      </div>
+    </div>
+
+    <div class="form-row-group">
+      <div class="form-row">
+        <label for="model">Model</label>
+        <input id="model" type="text" formControlName="model" placeholder="Enter model" required />
+      </div>
+      <div class="form-row">
+        <label for="storage">Storage</label>
+        <input id="storage" type="text" formControlName="storage" placeholder="Enter storage" required />
+      </div>
+      <div class="form-row">
+        <label for="color">Color</label>
+        <input id="color" type="text" formControlName="color" placeholder="Enter color" required />
+      </div>
+    </div>
+
+    <div class="form-row-group">
+      <div class="form-row">
+        <label for="price">Price (LKR)</label>
+        <input id="price" type="number" formControlName="price" placeholder="Enter price" required />
+      </div>
+      <div class="form-row">
+        <label for="stock_qty">Stock Quantity</label>
+        <input id="stock_qty" type="number" formControlName="stock_qty" placeholder="Enter stock quantity" required />
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="productForm.invalid">Update Product</button>
+  </form>
+</div>
