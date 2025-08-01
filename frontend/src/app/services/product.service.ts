@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
@@ -7,7 +7,8 @@ export class ProductService {
 
   constructor(private http: HttpClient) {}
 
-  addProduct(product: any) {
+  addProduct(product: FormData) {
+    // No need to set content-type header; browser sets multipart/form-data automatically
     return this.http.post(`${this.apiUrl}/add`, product);
   }
 
@@ -19,7 +20,8 @@ export class ProductService {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
 
-  updateProduct(id: number, product: any) {
+  updateProduct(id: number, product: FormData) {
+    // Same as addProduct, send FormData for update to support file upload
     return this.http.put(`${this.apiUrl}/${id}`, product);
   }
 

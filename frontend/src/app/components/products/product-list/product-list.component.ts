@@ -17,7 +17,7 @@ export class ProductListComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-    private router: Router                              // ✅ Inject Router
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -27,23 +27,21 @@ export class ProductListComponent implements OnInit {
   loadProducts() {
     this.productService.getProducts().subscribe({
       next: (data: any) => this.products = data,
-      error: () => alert('Failed to load products')
+      error: () => alert('❌ Failed to load products')
     });
   }
 
   deleteProduct(id: number) {
     if (confirm('Are you sure you want to delete this product?')) {
       this.productService.deleteProduct(id).subscribe(() => {
-        alert('Product deleted');
+        alert('🗑️ Product deleted');
         this.loadProducts();
       });
     }
   }
 
   filteredProducts() {
-    if (!this.searchText) {
-      return this.products;
-    }
+    if (!this.searchText) return this.products;
 
     const lowerSearch = this.searchText.toLowerCase();
     return this.products.filter(p =>
@@ -53,7 +51,6 @@ export class ProductListComponent implements OnInit {
     );
   }
 
-  // ✅ Navigates to the Add Product page
   goToAddProduct() {
     this.router.navigate(['/add-product']);
   }

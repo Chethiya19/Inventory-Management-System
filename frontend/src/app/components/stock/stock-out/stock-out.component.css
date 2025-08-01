@@ -1,0 +1,19 @@
+.stock-out-card {
+  border-radius: 15px;
+  transition: box-shadow 0.3s ease;
+}
+
+.stock-out-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.stock-out-card .form-select,
+.stock-out-card .form-control {
+  border-radius: 10px;
+}
+
+.stock-out-card .btn-danger {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.4px;
+}

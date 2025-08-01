@@ -1,7 +1,28 @@
 <nav class="sidebar-nav">
-  <ul>
-    <li><a routerLink="/dashboard" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Dashboard</a></li>
-    <li><a routerLink="/products" routerLinkActive="active-link">Products</a></li>
-    <li><a routerLink="/orders" routerLinkActive="active-link">Orders</a></li>
+  <ul class="main-nav">
+    <li>
+      <a routerLink="/dashboard" routerLinkActive="active-main-link" [routerLinkActiveOptions]="{exact:true}">Dashboard</a>
+    </li>
+    <li>
+      <a routerLink="/products" routerLinkActive="active-main-link">Products</a>
+    </li>
+
+    <!-- Stock Management Dropdown -->
+    <li>
+      <a href="#" (click)="toggleStockDropdown($event)" [class.active-main-link]="isStockDropdownOpen" class="dropdown-toggle">
+        Stock Management<span class="arrow"></span>
+      </a>
+      
+      <ul *ngIf="isStockDropdownOpen" class="dropdown-submenu">
+        <li><a routerLink="/stock-in" routerLinkActive="active-sub-link" class="sub-link">Stock In</a></li>
+        <li><a routerLink="/stock-out" routerLinkActive="active-sub-link" class="sub-link">Stock Out</a></li>
+        <li><a routerLink="/low-stock" routerLinkActive="active-sub-link" class="sub-link">Low Stock Alerts</a></li>
+      </ul>
+    </li>
+
+    <li><a routerLink="/orders" routerLinkActive="active-main-link">Orders</a></li>
+    <li><a routerLink="/suppliers" routerLinkActive="active-main-link">Suppliers</a></li>
+    <li><a routerLink="/reports" routerLinkActive="active-main-link">Reports</a></li>
+    <li><a routerLink="/settings" routerLinkActive="active-main-link">Settings</a></li>
   </ul>
 </nav>

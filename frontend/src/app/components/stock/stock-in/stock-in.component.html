@@ -1,0 +1,35 @@
+<div class="container py-5">
+  <div class="card shadow stock-in-card">
+    <div class="card-header bg-success text-white">
+      <h4 class="mb-0"><i class="bi bi-box-arrow-in-down"></i> Stock In</h4>
+    </div>
+    <div class="card-body">
+
+      <div *ngIf="message" class="alert alert-success">{{ message }}</div>
+      <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+      <form class="row g-3 align-items-end">
+        <div class="col-md-5">
+          <label class="form-label"><i class="bi bi-box"></i> Product</label>
+          <select class="form-select" [(ngModel)]="selectedProductId" name="product">
+            <option [ngValue]="undefined">-- Select Product --</option>
+            <option *ngFor="let p of products" [ngValue]="p.id">
+              {{ p.name }} (Current: {{ p.stock_qty }})
+            </option>
+          </select>
+        </div>
+
+        <div class="col-md-3">
+          <label class="form-label"><i class="bi bi-plus-circle"></i> Quantity</label>
+          <input type="number" class="form-control" [(ngModel)]="quantity" name="quantity" min="1" placeholder="Qty" />
+        </div>
+
+        <div class="col-md-4 d-grid">
+          <button class="btn btn-success" (click)="onAddStock()">
+            <i class="bi bi-arrow-up-circle-fill"></i> Add Stock
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

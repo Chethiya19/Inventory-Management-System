@@ -17,6 +17,9 @@ import { DashboardLayoutComponent } from './layout/dashboard-layout/dashboard-la
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AddProductComponent } from './components/products/add-product/add-product.component';
 import { ProductListComponent } from './components/products/product-list/product-list.component';
+import { StockInComponent } from './components/stock/stock-in/stock-in.component';
+import { StockOutComponent } from './components/stock/stock-out/stock-out.component';
+import { LowStockAlertsComponent } from './components/stock/low-stock-alerts/low-stock-alerts.component';
 import { OrdersComponent } from './components/orders/orders.component';
 
 @NgModule({
@@ -39,6 +42,9 @@ import { OrdersComponent } from './components/orders/orders.component';
     DashboardComponent,
     AddProductComponent,
     ProductListComponent,
+    StockInComponent,
+    StockOutComponent,
+    LowStockAlertsComponent,
     OrdersComponent
   ],
   bootstrap: [AppComponent]

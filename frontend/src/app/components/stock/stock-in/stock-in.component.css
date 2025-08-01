@@ -1,0 +1,19 @@
+.stock-in-card {
+  border-radius: 15px;
+  transition: box-shadow 0.3s ease;
+}
+
+.stock-in-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.stock-in-card .form-select,
+.stock-in-card .form-control {
+  border-radius: 10px;
+}
+
+.stock-in-card .btn-success {
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.4px;
+}

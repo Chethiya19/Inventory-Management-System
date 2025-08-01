@@ -1,42 +1,52 @@
 <div class="edit-product-container">
   <h2>✏️ Edit Product</h2>
 
-  <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="product-form">
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="product-form" enctype="multipart/form-data">
     <div class="form-row-group">
       <div class="form-row">
         <label for="name">Product Name</label>
-        <input id="name" type="text" formControlName="name" placeholder="Enter product name" required />
+        <input id="name" type="text" formControlName="name" required />
       </div>
       <div class="form-row">
         <label for="brand">Brand</label>
-        <input id="brand" type="text" formControlName="brand" placeholder="Enter brand" required />
+        <input id="brand" type="text" formControlName="brand" required />
       </div>
     </div>
 
     <div class="form-row-group">
       <div class="form-row">
         <label for="model">Model</label>
-        <input id="model" type="text" formControlName="model" placeholder="Enter model" required />
+        <input id="model" type="text" formControlName="model" required />
       </div>
       <div class="form-row">
         <label for="storage">Storage</label>
-        <input id="storage" type="text" formControlName="storage" placeholder="Enter storage" required />
+        <input id="storage" type="text" formControlName="storage" required />
       </div>
       <div class="form-row">
         <label for="color">Color</label>
-        <input id="color" type="text" formControlName="color" placeholder="Enter color" required />
+        <input id="color" type="text" formControlName="color" required />
       </div>
     </div>
 
     <div class="form-row-group">
       <div class="form-row">
         <label for="price">Price (LKR)</label>
-        <input id="price" type="number" formControlName="price" placeholder="Enter price" required />
+        <input id="price" type="number" formControlName="price" required />
       </div>
       <div class="form-row">
         <label for="stock_qty">Stock Quantity</label>
-        <input id="stock_qty" type="number" formControlName="stock_qty" placeholder="Enter stock quantity" required />
+        <input id="stock_qty" type="number" formControlName="stock_qty" required />
       </div>
+    </div>
+
+    <div class="form-row">
+      <label>Current Image:</label>
+      <img *ngIf="currentImage" [src]="currentImage" alt="Product Image" style="max-width: 150px; border-radius: 8px; margin-bottom: 10px;" />
+    </div>
+
+    <div class="form-row">
+      <label for="image">Change Image</label>
+      <input id="image" type="file" (change)="onImageSelected($event)" accept="image/*" />
     </div>
 
     <button type="submit" [disabled]="productForm.invalid">Update Product</button>

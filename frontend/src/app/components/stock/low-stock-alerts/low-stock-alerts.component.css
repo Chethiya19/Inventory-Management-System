@@ -1,0 +1,16 @@
+.low-stock-card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.low-stock-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.low-stock-card .table td,
+.low-stock-card .table th {
+  vertical-align: middle;
+}

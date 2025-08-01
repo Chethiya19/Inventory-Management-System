@@ -1,11 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const productController = require('../controllers/productController');
+const upload = require('../middlewares/upload');
 
-router.post('/add', productController.addProduct);
+// Use multer upload middleware for routes with file upload
+router.post('/add', upload.single('image'), productController.addProduct);
+router.put('/:id', upload.single('image'), productController.updateProduct);
+
 router.get('/', productController.getAllProducts);
 router.get('/:id', productController.getProductById);
-router.put('/:id', productController.updateProduct);
 router.delete('/:id', productController.deleteProduct);
 
 module.exports = router;
