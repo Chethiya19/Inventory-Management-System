@@ -1,5 +1,5 @@
 # Inventory-Management-System
 Inventory Management System of Mobile Phones
 
-
-<img width="1350" height="622" alt="image" src="https://github.com/user-attachments/assets/6f511204-6af0-42d0-b6e1-4602c4d5eade" />
+UI Desgin
+<img width="1353" height="628" alt="image" src="https://github.com/user-attachments/assets/2ff659e5-6fa1-45bf-94bf-050e22319e10" />
