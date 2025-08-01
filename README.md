@@ -1,6 +1,6 @@
 # Inventory-Management-System
 **Inventory Management System of Mobile Phones**  
-Built with the **(MySql, Express js, Angular, Node.js)**
+Built with the **(Angular, Node js, Express js, MySQL)**
 
 ## Tech Stack
 
