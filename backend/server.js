@@ -24,11 +24,13 @@ const authRoutes = require('./routes/authRoutes');
 const productRoutes = require('./routes/productRoutes');
 const stockRoutes = require('./routes/stockRoutes');
 const brandRoutes = require('./routes/brandRoutes');
+const statsRoutes = require('./routes/stats');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/stock', stockRoutes);
 app.use('/api/brands', brandRoutes);
+app.use('/api/stats', statsRoutes);
 
 
 // DB sync and start server

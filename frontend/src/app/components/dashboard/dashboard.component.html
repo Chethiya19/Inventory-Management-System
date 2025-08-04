@@ -1,2 +1,17 @@
-<h2>Dashboard</h2>
-<p>Welcome to your dashboard! Here you can see an overview of your system.</p>
+<div class="dashboard-container">
+  <h2>Dashboard Stats</h2>
+
+  <div *ngIf="loading" class="loading">Loading stats...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+
+  <div *ngIf="!loading && !error" class="stats-cards">
+    <div class="card">
+      <h3>Products</h3>
+      <p>{{ counts.products }}</p>
+    </div>
+    <div class="card">
+      <h3>Brands</h3>
+      <p>{{ counts.brands }}</p>
+    </div>
+  </div>
+</div>

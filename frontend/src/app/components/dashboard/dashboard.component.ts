@@ -1,21 +1,33 @@
-import { Component } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
+import { Component, OnInit } from '@angular/core';
+import { StatsService, Counts } from '../../services/stats.sevice';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; 
-import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-dashboard',
+  standalone: true,
+  imports: [CommonModule, FormsModule],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
+export class DashboardComponent implements OnInit {
+  counts: Counts = { products: 0, brands: 0 };
+  loading = true;
+  error: string | null = null;
 
-export class DashboardComponent {
-  username = 'User'; // Optional: You can set from authService if available
+  constructor(private statsService: StatsService) {}
 
-  constructor(private auth: AuthService) {}
-
-  logout() {
-    this.auth.logout();
+  ngOnInit(): void {
+    this.statsService.getCounts().subscribe({
+      next: (data) => {
+        this.counts = data;
+        this.loading = false;
+      },
+      error: (err) => {
+        this.error = 'Failed to load stats';
+        this.loading = false;
+      }
+    });
   }
 }
