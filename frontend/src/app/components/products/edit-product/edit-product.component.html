@@ -2,6 +2,7 @@
   <h2>✏️ Edit Product</h2>
 
   <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="product-form" enctype="multipart/form-data">
+    <!-- Product Name & Brand -->
     <div class="form-row-group">
       <div class="form-row">
         <label for="name">Product Name</label>
@@ -9,10 +10,16 @@
       </div>
       <div class="form-row">
         <label for="brand">Brand</label>
-        <input id="brand" type="text" formControlName="brand" required />
+        <select id="brand" formControlName="brand" required>
+          <option value="" disabled>Select a brand</option>
+          <option *ngFor="let brand of brands" [value]="brand.brandName">
+            {{ brand.brandName }}
+          </option>
+        </select>
       </div>
     </div>
 
+    <!-- Model, Storage, Color -->
     <div class="form-row-group">
       <div class="form-row">
         <label for="model">Model</label>
@@ -20,7 +27,10 @@
       </div>
       <div class="form-row">
         <label for="storage">Storage</label>
-        <input id="storage" type="text" formControlName="storage" required />
+        <select id="storage" formControlName="storage" required>
+          <option value="" disabled>Select storage</option>
+          <option *ngFor="let size of storageOptions" [value]="size">{{ size }}</option>
+        </select>
       </div>
       <div class="form-row">
         <label for="color">Color</label>
@@ -28,6 +38,7 @@
       </div>
     </div>
 
+    <!-- Price & Stock -->
     <div class="form-row-group">
       <div class="form-row">
         <label for="price">Price (LKR)</label>
@@ -39,16 +50,20 @@
       </div>
     </div>
 
-    <div class="form-row">
-      <label>Current Image:</label>
-      <img *ngIf="currentImage" [src]="currentImage" alt="Product Image" style="max-width: 150px; border-radius: 8px; margin-bottom: 10px;" />
+    <!-- Image Preview and Upload -->
+    <div class="form-row-group">
+      <div class="form-row full-width">
+        <label>Current Image:</label>
+        <img *ngIf="currentImage" [src]="currentImage" alt="Product Image"
+          style="max-width: 150px; border-radius: 8px; margin-bottom: 10px;" />
+      </div>
+      <div class="form-row full-width">
+        <label for="image">Change Image</label>
+        <input id="image" type="file" (change)="onImageSelected($event)" accept="image/*" />
+      </div>
     </div>
 
-    <div class="form-row">
-      <label for="image">Change Image</label>
-      <input id="image" type="file" (change)="onImageSelected($event)" accept="image/*" />
-    </div>
-
+    <!-- Submit -->
     <button type="submit" [disabled]="productForm.invalid">Update Product</button>
   </form>
 </div>

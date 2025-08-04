@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductService } from '../../../services/product.service';
+import { BrandService, Brand } from '../../../services/brand.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -9,9 +10,9 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-add-product',
   imports: [CommonModule, FormsModule],
   templateUrl: './add-product.component.html',
-  styleUrl: './add-product.component.css'
+  styleUrls: ['./add-product.component.css']
 })
-export class AddProductComponent {
+export class AddProductComponent implements OnInit {
   product = {
     name: '',
     brand: '',
@@ -23,11 +24,30 @@ export class AddProductComponent {
   };
 
   selectedImage: File | null = null;
+  brands: Brand[] = [];
+  storageOptions: string[] = ['32GB', '64GB', '128GB', '256GB', '512GB', '1TB'];
+
 
   constructor(
     private productService: ProductService,
-    private router: Router
+    private router: Router,
+    private brandService: BrandService
   ) {}
+
+  ngOnInit() {
+    this.loadBrands();
+  }
+
+  loadBrands() {
+    this.brandService.getBrands().subscribe({
+      next: (data) => {
+        this.brands = data;
+      },
+      error: (err) => {
+        console.error('Failed to load brands', err);
+      }
+    });
+  }
 
   onImageSelected(event: Event): void {
     const input = event.target as HTMLInputElement;
@@ -37,6 +57,11 @@ export class AddProductComponent {
   }
 
   onSubmit() {
+    if (!this.product.brand) {
+      alert('Please select a brand');
+      return;
+    }
+
     const formData = new FormData();
     formData.append('name', this.product.name);
     formData.append('brand', this.product.brand);

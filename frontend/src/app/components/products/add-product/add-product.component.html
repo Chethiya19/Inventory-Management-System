@@ -9,7 +9,12 @@
       </div>
       <div class="form-row">
         <label for="brand">Brand</label>
-        <input id="brand" type="text" placeholder="Enter brand" [(ngModel)]="product.brand" name="brand" required />
+        <select id="brand" [(ngModel)]="product.brand" name="brand" required>
+          <option value="" disabled selected>Select a brand</option>
+          <option *ngFor="let brand of brands" [value]="brand.brandName">
+            {{ brand.brandName }}
+          </option>
+        </select>
       </div>
     </div>
 
@@ -20,7 +25,10 @@
       </div>
       <div class="form-row">
         <label for="storage">Storage</label>
-        <input id="storage" type="text" placeholder="Enter storage" [(ngModel)]="product.storage" name="storage" required />
+        <select id="storage" [(ngModel)]="product.storage" name="storage" required>
+          <option value="" disabled selected>Select storage</option>
+          <option *ngFor="let size of storageOptions" [value]="size">{{ size }}</option>
+        </select>
       </div>
       <div class="form-row">
         <label for="color">Color</label>
@@ -35,7 +43,8 @@
       </div>
       <div class="form-row">
         <label for="stock_qty">Stock Quantity</label>
-        <input id="stock_qty" type="number" placeholder="Enter stock quantity" [(ngModel)]="product.stock_qty" name="stock_qty" required />
+        <input id="stock_qty" type="number" placeholder="Enter stock quantity" [(ngModel)]="product.stock_qty"
+          name="stock_qty" required />
       </div>
     </div>
 

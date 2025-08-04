@@ -71,3 +71,31 @@ exports.getLowStockAlerts = async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch low stock alerts', details: error.message });
   }
 };
+
+exports.getStockInHistory = async (req, res) => {
+  try {
+    const stockInEntries = await StockHistory.findAll({
+      where: { type: 'in' },
+      include: [{ model: Product, attributes: ['id', 'name'] }],
+      order: [['createdAt', 'ASC']]
+    });
+
+    res.status(200).json(stockInEntries);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch stock in history', details: error.message });
+  }
+};
+
+exports.getStockOutHistory = async (req, res) => {
+  try {
+    const stockOutEntries = await StockHistory.findAll({
+      where: { type: 'out' },
+      include: [{ model: Product, attributes: ['id', 'name'] }],
+      order: [['createdAt', 'ASC']]
+    });
+
+    res.status(200).json(stockOutEntries);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch stock out history', details: error.message });
+  }
+};

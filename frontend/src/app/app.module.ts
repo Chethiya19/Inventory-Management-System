@@ -11,15 +11,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+
 import { HeaderComponent } from './layout/header/header.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { DashboardLayoutComponent } from './layout/dashboard-layout/dashboard-layout.component';
+
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+
 import { AddProductComponent } from './components/products/add-product/add-product.component';
 import { ProductListComponent } from './components/products/product-list/product-list.component';
+import { EditProductComponent } from './components/products/edit-product/edit-product.component';
+
 import { StockInComponent } from './components/stock/stock-in/stock-in.component';
 import { StockOutComponent } from './components/stock/stock-out/stock-out.component';
 import { LowStockAlertsComponent } from './components/stock/low-stock-alerts/low-stock-alerts.component';
+
+import { BrandComponent } from './components/brand/brand.component';
 import { OrdersComponent } from './components/orders/orders.component';
 
 @NgModule({
@@ -42,9 +49,11 @@ import { OrdersComponent } from './components/orders/orders.component';
     DashboardComponent,
     AddProductComponent,
     ProductListComponent,
+    EditProductComponent,
     StockInComponent,
     StockOutComponent,
     LowStockAlertsComponent,
+    BrandComponent,
     OrdersComponent
   ],
   bootstrap: [AppComponent]

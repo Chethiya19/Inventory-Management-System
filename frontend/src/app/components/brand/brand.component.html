@@ -1,0 +1,44 @@
+<div class="brand-container">
+  <h2>📱 Mobile Brand Management</h2>
+
+  <form (ngSubmit)="editMode ? updateBrand() : addBrand()" class="brand-form">
+    <div class="input-group">
+      <input
+        type="text"
+        [(ngModel)]="newBrandName"
+        name="brandName"
+        placeholder="Enter mobile brand name"
+        (input)="onInputChange()"
+        required
+      />
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    </div>
+
+    <div class="btn-group">
+      <button type="submit" class="primary-btn">
+        {{ editMode ? '💾 Update' : '➕ Add' }} Brand
+      </button>
+      <button *ngIf="editMode" type="button" (click)="cancelEdit()" class="cancel-btn">✖ Cancel</button>
+    </div>
+  </form>
+
+  <table class="brand-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Brand Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let brand of brands">
+        <td>{{ brand.brandID }}</td>
+        <td>{{ brand.brandName }}</td>
+        <td>
+          <button class="edit-btn" (click)="editBrand(brand)">✏️ Edit</button>
+          <button class="delete-btn" (click)="deleteBrand(brand.brandID)">🗑️ Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

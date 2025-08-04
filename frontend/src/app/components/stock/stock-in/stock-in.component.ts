@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { StockService, Product } from '../../../services/stock.service';
+import { StockService, Product, StockHistory } from '../../../services/stock.service';
 
 @Component({
   selector: 'app-stock-in',
@@ -10,9 +10,9 @@ import { StockService, Product } from '../../../services/stock.service';
   templateUrl: './stock-in.component.html',
   styleUrl: './stock-in.component.css'
 })
-
 export class StockInComponent implements OnInit {
   products: Product[] = [];
+  stockInHistory: StockHistory[] = [];
   selectedProductId?: number;
   quantity: number = 0;
   message = '';
@@ -22,12 +22,20 @@ export class StockInComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadProducts();
+    this.loadStockInHistory();
   }
 
   loadProducts() {
     this.stockService.getAllProducts().subscribe({
       next: products => this.products = products,
       error: () => this.error = 'Failed to load products.'
+    });
+  }
+
+  loadStockInHistory() {
+    this.stockService.getStockInHistory().subscribe({
+      next: history => this.stockInHistory = history,
+      error: () => this.error = 'Failed to load stock in history.'
     });
   }
 
@@ -44,6 +52,7 @@ export class StockInComponent implements OnInit {
       next: res => {
         this.message = res.message;
         this.loadProducts();
+        this.loadStockInHistory();
         this.quantity = 0;
       },
       error: err => this.error = err.error?.error || 'Failed to add stock.'

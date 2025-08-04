@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../../../services/product.service';
+import { BrandService, Brand } from '../../../services/brand.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -17,13 +18,16 @@ export class EditProductComponent implements OnInit {
   productId!: number;
   selectedImage: File | null = null;
   currentImage: string | null = null;
+  brands: Brand[] = [];
+  storageOptions: string[] = ['32GB', '64GB', '128GB', '256GB', '512GB', '1TB'];
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private productService: ProductService,
+    private brandService: BrandService,
     private fb: FormBuilder
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.productId = Number(this.route.snapshot.paramMap.get('id'));
@@ -38,13 +42,29 @@ export class EditProductComponent implements OnInit {
       stock_qty: [0, [Validators.required, Validators.min(0)]]
     });
 
+    this.loadBrands();
+    this.loadProduct();
+  }
+
+  loadBrands() {
+    this.brandService.getBrands().subscribe({
+      next: (data) => {
+        this.brands = data;
+      },
+      error: (err) => {
+        console.error('Failed to load brands', err);
+      }
+    });
+  }
+
+  loadProduct() {
     this.productService.getProductById(this.productId).subscribe({
       next: (product: any) => {
         this.productForm.patchValue(product);
         if (product && product.image) {
           this.currentImage = `http://localhost:3000/uploads/products/${product.image}`;
         } else {
-          this.currentImage = null; // No image available
+          this.currentImage = null;
         }
       },
       error: () => alert('Error loading product data')
@@ -66,8 +86,8 @@ export class EditProductComponent implements OnInit {
       formData.append('model', this.productForm.value.model);
       formData.append('storage', this.productForm.value.storage);
       formData.append('color', this.productForm.value.color);
-      formData.append('price', this.productForm.value.price);
-      formData.append('stock_qty', this.productForm.value.stock_qty);
+      formData.append('price', this.productForm.value.price.toString());
+      formData.append('stock_qty', this.productForm.value.stock_qty.toString());
 
       if (this.selectedImage) {
         formData.append('image', this.selectedImage);

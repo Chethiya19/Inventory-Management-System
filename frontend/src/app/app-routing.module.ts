@@ -15,6 +15,7 @@ import { StockInComponent } from './components/stock/stock-in/stock-in.component
 import { StockOutComponent } from './components/stock/stock-out/stock-out.component';
 import { LowStockAlertsComponent } from './components/stock/low-stock-alerts/low-stock-alerts.component';
 
+import { BrandComponent } from './components/brand/brand.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { AuthGuard } from './guards/auth.guard';
 
@@ -34,6 +35,7 @@ export const routes: Routes = [
       { path: 'stock-in', component: StockInComponent },
       { path: 'stock-out', component: StockOutComponent },
       { path: 'low-stock', component: LowStockAlertsComponent },
+      { path: 'brands', component: BrandComponent },
       { path: 'orders', component: OrdersComponent }
     ]
   }

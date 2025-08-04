@@ -1,13 +1,15 @@
-<div class="container py-5">
+<div class="container py-3">
   <div class="card shadow stock-in-card">
     <div class="card-header bg-success text-white">
       <h4 class="mb-0"><i class="bi bi-box-arrow-in-down"></i> Stock In</h4>
     </div>
     <div class="card-body">
 
+      <!-- Success / Error messages -->
       <div *ngIf="message" class="alert alert-success">{{ message }}</div>
       <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
 
+      <!-- Stock In Form -->
       <form class="row g-3 align-items-end">
         <div class="col-md-5">
           <label class="form-label"><i class="bi bi-box"></i> Product</label>
@@ -25,11 +27,43 @@
         </div>
 
         <div class="col-md-4 d-grid">
-          <button class="btn btn-success" (click)="onAddStock()">
+          <button class="btn btn-success" type="button" (click)="onAddStock()">
             <i class="bi bi-arrow-up-circle-fill"></i> Add Stock
           </button>
         </div>
       </form>
+
+      <!-- Divider -->
+      <hr class="my-4" />
+
+      <!-- Stock In History Table -->
+      <h5><i class="bi bi-clock-history"></i> Stock In History</h5>
+      <div *ngIf="stockInHistory.length === 0" class="text-muted">No stock in history available.</div>
+
+      <div class="table-responsive" *ngIf="stockInHistory.length > 0">
+        <table class="table table-bordered table-striped table-hover mt-3">
+          <thead class="table-success">
+            <tr>
+              <th>#</th>
+              <th>Product ID</th>
+              <th>Product</th>
+              <th>Quantity</th>
+              <th>Date & Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let entry of stockInHistory; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ entry.Product.id }}</td>
+              <td>{{ entry.Product.name }}</td>
+              <td>{{ entry.quantity }}</td>
+              <!-- <td>{{ entry.createdAt | date: 'short' }}</td> -->
+              <td>{{ entry.createdAt | date: 'M/d/y, h:mm a' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
     </div>
   </div>
 </div>
