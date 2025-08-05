@@ -31,8 +31,10 @@ Built with the **(Angular, Node js, Express js, MySQL)**
 
 ### Dashboard
 
+#### Products
 <img width="1365" height="628" alt="image" src="https://github.com/user-attachments/assets/69ca7a99-714a-44db-85f1-7659390335cd" />
 
+#### Stock Management 
 <img width="1365" height="630" alt="image" src="https://github.com/user-attachments/assets/5519d378-44d8-459b-89be-f22a7cf6f86c" />
 
 
