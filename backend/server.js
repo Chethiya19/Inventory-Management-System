@@ -14,6 +14,10 @@ StockHistory.belongsTo(Product, { foreignKey: 'productId' });
 
 const app = express();
 
+// Cookie 
+const cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
 // Middleware
 app.use(cors());
 app.use(express.json());

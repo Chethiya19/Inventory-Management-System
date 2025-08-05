@@ -6,6 +6,7 @@ export interface Product {
   id: number;
   name: string;
   stock_qty: number;
+  color: string;
   // Add other fields if needed
 }
 
@@ -19,6 +20,7 @@ export interface StockHistory {
   Product: {
     id: number;
     name: string;
+    color: string;
   };
 }
 
