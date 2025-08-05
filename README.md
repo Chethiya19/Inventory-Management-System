@@ -30,6 +30,7 @@ Built with the **(Angular, Node js, Express js, MySQL)**
 ## UI Desgin
 
 ### Dashboard
+<img width="1365" height="629" alt="image" src="https://github.com/user-attachments/assets/56d106be-33a0-4402-8678-a339f32ef129" />
 
 #### Products Management
 <img width="1365" height="628" alt="image" src="https://github.com/user-attachments/assets/69ca7a99-714a-44db-85f1-7659390335cd" />
