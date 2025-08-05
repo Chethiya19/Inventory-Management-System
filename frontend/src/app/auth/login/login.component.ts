@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -20,13 +20,13 @@ export class LoginComponent {
   constructor(private auth: AuthService, private router: Router) {}
 
   onLogin() {
+    this.error = '';
     this.auth.login({ email: this.email, password: this.password }).subscribe({
       next: (res: any) => {
-        this.auth.setToken(res.token);
         this.router.navigate(['/dashboard']);
       },
       error: (err) => {
-        this.error = err.error.message || 'Login failed';
+        this.error = err.error?.message || 'Login failed. Please try again.';
       }
     });
   }

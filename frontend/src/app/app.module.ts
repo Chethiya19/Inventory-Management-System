@@ -28,6 +28,8 @@ import { LowStockAlertsComponent } from './components/stock/low-stock-alerts/low
 
 import { BrandComponent } from './components/brand/brand.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { SettingsComponent } from './components/settings/settings.component';
+
 
 @NgModule({
   imports: [
@@ -54,7 +56,8 @@ import { OrdersComponent } from './components/orders/orders.component';
     StockOutComponent,
     LowStockAlertsComponent,
     BrandComponent,
-    OrdersComponent
+    OrdersComponent,
+    SettingsComponent
   ],
   bootstrap: [AppComponent]
 })

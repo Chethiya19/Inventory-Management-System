@@ -16,4 +16,7 @@ router.get('/profile', authMiddleware, async (req, res) => {
 // Logout
 router.post('/logout', authController.logout);
 
+// Change Password (Protected)
+router.post('/change-password', authMiddleware, authController.changePassword);
+
 module.exports = router;
