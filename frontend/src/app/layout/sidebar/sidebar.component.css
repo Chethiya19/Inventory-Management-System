@@ -25,7 +25,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 22px;
+  gap: 10px;
+  padding: 12px 18px;
   color: #ecf0f1;
   font-weight: 600;
   font-size: 16px;
@@ -33,6 +34,21 @@
   border-left: 6px solid transparent;
   transition: background-color 0.3s, border-color 0.3s;
   cursor: pointer;
+}
+
+/* Icon style */
+.main-nav .icon {
+  width: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: #ecf0f1;
+}
+
+/* Link text style */
+.main-nav .link-text {
+  flex-grow: 1;
 }
 
 /* Hover state */
@@ -47,6 +63,22 @@
   background-color: #3b4e61;
   border-left-color: #1abc9c;
   color: #1abc9c;
+}
+
+/* Default icon color */
+.main-nav .icon i {
+  color: #ecf0f1;
+  transition: color 0.3s ease;
+}
+
+/* Active main nav icon color */
+.active-main-link .icon i {
+  color: #1abc9c;  /* Same as active link color */
+}
+
+/* Optional: Active sub-link icon color */
+.active-sub-link i {
+  color: #ffffff;
 }
 
 /* Dropdown toggle arrow */

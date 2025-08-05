@@ -1,29 +1,79 @@
 <nav class="sidebar-nav">
   <ul class="main-nav">
+    
+    <!-- Dashboard -->
     <li>
-      <a routerLink="/dashboard" routerLinkActive="active-main-link" [routerLinkActiveOptions]="{exact:true}">Dashboard</a>
+      <a routerLink="/dashboard" routerLinkActive="active-main-link" [routerLinkActiveOptions]="{exact:true}">
+        <div class="icon"><i class="bi bi-speedometer2"></i></div>
+        <div class="link-text">Dashboard</div>
+      </a>
     </li>
+
+    <!-- Products -->
     <li>
-      <a routerLink="/products" routerLinkActive="active-main-link">Products</a>
+      <a routerLink="/products" routerLinkActive="active-main-link">
+        <div class="icon"><i class="bi bi-box-seam"></i></div>
+        <div class="link-text">Products</div>
+      </a>
     </li>
 
     <!-- Stock Management Dropdown -->
     <li>
       <a href="#" (click)="toggleStockDropdown($event)" [class.active-main-link]="isStockDropdownOpen" class="dropdown-toggle">
-        Stock Management<span class="arrow"></span>
+        <div class="icon"><i class="bi bi-stack"></i></div>
+        <div class="link-text">Stock Management</div>
+        <span class="arrow"><i class="bi bi-chevron-down"></i></span>
       </a>
-      
       <ul *ngIf="isStockDropdownOpen" class="dropdown-submenu">
-        <li><a routerLink="/stock-in" routerLinkActive="active-sub-link" class="sub-link">Stock In</a></li>
-        <li><a routerLink="/stock-out" routerLinkActive="active-sub-link" class="sub-link">Stock Out</a></li>
-        <li><a routerLink="/low-stock" routerLinkActive="active-sub-link" class="sub-link">Low Stock Alerts</a></li>
+        <li>
+          <a routerLink="/stock-in" routerLinkActive="active-sub-link" class="sub-link">
+            <i class="bi bi-box-arrow-in-down"></i> Stock In
+          </a>
+        </li>
+        <li>
+          <a routerLink="/stock-out" routerLinkActive="active-sub-link" class="sub-link">
+            <i class="bi bi-box-arrow-up"></i> Stock Out
+          </a>
+        </li>
+        <li>
+          <a routerLink="/low-stock" routerLinkActive="active-sub-link" class="sub-link">
+            <i class="bi bi-exclamation-triangle"></i> Low Stock Alerts
+          </a>
+        </li>
       </ul>
     </li>
 
-    <li><a routerLink="/brands" routerLinkActive="active-main-link">Brands</a></li>
-    <li><a routerLink="/orders" routerLinkActive="active-main-link">Orders</a></li>
-    <!-- <li><a routerLink="/suppliers" routerLinkActive="active-main-link">Suppliers</a></li> -->
-    <li><a routerLink="/reports" routerLinkActive="active-main-link">Reports</a></li>
-    <li><a routerLink="/settings" routerLinkActive="active-main-link">Settings</a></li>
+    <!-- Brands -->
+    <li>
+      <a routerLink="/brands" routerLinkActive="active-main-link">
+        <div class="icon"><i class="bi bi-tags"></i></div>
+        <div class="link-text">Brands</div>
+      </a>
+    </li>
+
+    <!-- Orders -->
+    <li>
+      <a routerLink="/orders" routerLinkActive="active-main-link">
+        <div class="icon"><i class="bi bi-cart-check"></i></div>
+        <div class="link-text">Orders</div>
+      </a>
+    </li>
+
+    <!-- Reports -->
+    <li>
+      <a routerLink="/reports" routerLinkActive="active-main-link">
+        <div class="icon"><i class="bi bi-bar-chart-line"></i></div>
+        <div class="link-text">Reports</div>
+      </a>
+    </li>
+
+    <!-- Settings -->
+    <li>
+      <a routerLink="/settings" routerLinkActive="active-main-link">
+        <div class="icon"><i class="bi bi-gear"></i></div>
+        <div class="link-text">Settings</div>
+      </a>
+    </li>
+
   </ul>
 </nav>
