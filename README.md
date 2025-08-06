@@ -30,8 +30,12 @@ Built with the **(Angular, Node js, Express js, MySQL)**
 ## UI Desgin
 
 ### Dashboard
+<img width="1365" height="629" alt="image" src="https://github.com/user-attachments/assets/56d106be-33a0-4402-8678-a339f32ef129" />
 
-<img width="1353" height="628" alt="image" src="https://github.com/user-attachments/assets/2ff659e5-6fa1-45bf-94bf-050e22319e10" />
+#### Products Management
+<img width="1365" height="628" alt="image" src="https://github.com/user-attachments/assets/69ca7a99-714a-44db-85f1-7659390335cd" />
 
-<img width="1350" height="630" alt="image" src="https://github.com/user-attachments/assets/1ca4e68d-c808-4b85-b8f7-10740366ebfb" />
+#### Stock Management 
+<img width="1365" height="630" alt="image" src="https://github.com/user-attachments/assets/5519d378-44d8-459b-89be-f22a7cf6f86c" />
+
 
