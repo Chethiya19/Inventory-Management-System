@@ -11,7 +11,7 @@ export interface Counts {
   providedIn: 'root'
 })
 export class StatsService {
-  private apiUrl = 'http://localhost:3000/api/stats/counts';
+  private apiUrl = 'http://localhost:5000/api/stats/counts';
 
   constructor(private http: HttpClient) {}
 

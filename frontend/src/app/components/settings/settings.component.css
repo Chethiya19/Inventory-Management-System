@@ -1,9 +1,9 @@
 .settings-container {
   display: flex;
   justify-content: center;
-  padding: 50px 20px;
+  padding: 20px 20px;
   background: #f7f9fc;
-  min-height: 100vh;
+  min-height: 90vh;
 }
 
 .settings-card {

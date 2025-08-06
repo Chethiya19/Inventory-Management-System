@@ -62,7 +62,7 @@ export class EditProductComponent implements OnInit {
       next: (product: any) => {
         this.productForm.patchValue(product);
         if (product && product.image) {
-          this.currentImage = `http://localhost:3000/uploads/products/${product.image}`;
+          this.currentImage = `http://localhost:5000/uploads/products/${product.image}`;
         } else {
           this.currentImage = null;
         }

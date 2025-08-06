@@ -12,7 +12,7 @@ export interface Brand {
   providedIn: 'root'
 })
 export class BrandService {
-  private baseUrl = 'http://localhost:3000/api/brands';
+  private baseUrl = 'http://localhost:5000/api/brands';
 
   constructor(private http: HttpClient) {}
 

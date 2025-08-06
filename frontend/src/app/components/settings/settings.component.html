@@ -1,27 +1,62 @@
 <div class="settings-container">
   <div class="settings-card">
-    <h2><i class="bi bi-gear"></i> Change Password</h2>
+    <h2 class="settings-title">
+      <i class="bi bi-gear"></i> Change Password
+    </h2>
 
-    <form (ngSubmit)="changePassword()">
+    <form (ngSubmit)="changePassword()" #changePasswordForm="ngForm">
+      <!-- Current Password -->
       <div class="form-group">
         <label for="currentPassword">Current Password</label>
-        <input type="password" id="currentPassword" [(ngModel)]="currentPassword" name="currentPassword" required>
+        <input
+          type="password"
+          id="currentPassword"
+          [(ngModel)]="currentPassword"
+          name="currentPassword"
+          class="form-control"
+          required
+        />
       </div>
 
+      <!-- New Password -->
       <div class="form-group">
         <label for="newPassword">New Password</label>
-        <input type="password" id="newPassword" [(ngModel)]="newPassword" name="newPassword" required>
+        <input
+          type="password"
+          id="newPassword"
+          [(ngModel)]="newPassword"
+          name="newPassword"
+          class="form-control"
+          required
+        />
       </div>
 
+      <!-- Confirm Password -->
       <div class="form-group">
         <label for="confirmPassword">Confirm New Password</label>
-        <input type="password" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" required>
+        <input
+          type="password"
+          id="confirmPassword"
+          [(ngModel)]="confirmPassword"
+          name="confirmPassword"
+          class="form-control"
+          required
+        />
       </div>
 
-      <button type="submit" class="btn-primary">Update Password</button>
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary" [disabled]="!changePasswordForm.form.valid">
+        Update Password
+      </button>
 
-      <div *ngIf="message" class="alert success">{{ message }}</div>
-      <div *ngIf="error" class="alert error">{{ error }}</div>
+      <!-- Feedback Messages -->
+      <div *ngIf="message" class="alert alert-success mt-3">
+        {{ message }}
+      </div>
+
+      <div *ngIf="error" class="alert alert-danger mt-3">
+        {{ error }}
+      </div>
     </form>
   </div>
 </div>

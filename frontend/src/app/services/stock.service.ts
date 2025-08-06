@@ -28,7 +28,7 @@ export interface StockHistory {
   providedIn: 'root'
 })
 export class StockService {
-  private apiUrl = 'http://localhost:3000/api/stock';
+  private apiUrl = 'http://localhost:5000/api/stock';
 
   constructor(private http: HttpClient) {}
 

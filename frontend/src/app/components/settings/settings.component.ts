@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { SettingsService } from '../../services/settings.service';
 
 @Component({
   selector: 'app-settings',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './settings.component.html',
-  styleUrls: ['./settings.component.css']
+  styleUrls: ['./settings.component.css'],
 })
 export class SettingsComponent {
   currentPassword = '';
@@ -17,7 +17,7 @@ export class SettingsComponent {
   message = '';
   error = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private settingsService: SettingsService) {}
 
   changePassword() {
     this.message = '';
@@ -28,9 +28,9 @@ export class SettingsComponent {
       return;
     }
 
-    this.http.post<any>('/api/change-password', {
+    this.settingsService.changePassword({
       currentPassword: this.currentPassword,
-      newPassword: this.newPassword
+      newPassword: this.newPassword,
     }).subscribe({
       next: (res) => {
         this.message = res.message;
@@ -39,9 +39,8 @@ export class SettingsComponent {
         this.confirmPassword = '';
       },
       error: (err) => {
-         console.error('Error response:', err)
         this.error = err.error?.message || 'Something went wrong.';
-      }
+      },
     });
   }
 }
