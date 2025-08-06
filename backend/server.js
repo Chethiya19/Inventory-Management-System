@@ -15,7 +15,10 @@ const StockHistory = require('./models/StockHistory');
 Product.hasMany(StockHistory, { foreignKey: 'productId' });
 StockHistory.belongsTo(Product, { foreignKey: 'productId' });
 
-// ====== MIDDLEWARES ======
+app.use(cors({
+  origin: 'http://localhost:4200', // Angular app
+  credentials: true
+}));
 
 // Parse JSON and cookies
 app.use(express.json());
@@ -23,12 +26,6 @@ app.use(cookieParser());
 
 // Enable static file serving
 app.use('/uploads/products', express.static(path.join(__dirname, 'uploads', 'products')));
-
-// ✅ CORS setup with credentials
-app.use(cors({
-  origin: 'http://localhost:4200', // Frontend origin (adjust for prod)
-  credentials: true               // Allow sending/receiving cookies
-}));
 
 // ====== ROUTES ======
 const authRoutes = require('./routes/authRoutes');

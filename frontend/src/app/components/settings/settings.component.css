@@ -1,14 +1,14 @@
 .settings-container {
   display: flex;
   justify-content: center;
-  padding: 20px 20px;
-  background: #f7f9fc;
-  min-height: 90vh;
+  /* padding: 10px 20px; */
+  /* background: #f7f9fc; */
+  min-height: 80vh;
 }
 
 .settings-card {
   background: #fff;
-  padding: 30px 40px;
+  padding: 10px 40px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   width: 100%;

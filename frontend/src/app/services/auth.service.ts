@@ -14,24 +14,26 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
 
   register(userData: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/register`, userData);
+    return this.http.post(`${this.apiUrl}/register`, userData, {
+      withCredentials: true,
+    });
   }
 
   login(credentials: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, credentials).pipe(
+    return this.http.post(`${this.apiUrl}/login`, credentials, {
+      withCredentials: true,
+    }).pipe(
       tap((res: any) => {
-        this.setToken(res.token);
         this.setUsername(res.user.username);
       })
     );
   }
 
-  setToken(token: string): void {
-    localStorage.setItem('token', token);
-  }
-
-  getToken(): string | null {
-    return localStorage.getItem('token');
+  logout(): void {
+    this.http.post(`${this.apiUrl}/logout`, {}, { withCredentials: true }).subscribe(() => {
+      this.clearSession();
+      this.router.navigate(['/login']);
+    });
   }
 
   setUsername(username: string): void {
@@ -48,13 +50,11 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    return !!localStorage.getItem('token');
+    return !!localStorage.getItem('username'); // Since no token, rely on presence of username
   }
 
-  logout(): void {
-    localStorage.removeItem('token');
+  clearSession(): void {
     localStorage.removeItem('username');
     this.usernameSubject.next(null);
-    this.router.navigate(['/login']);
   }
 }

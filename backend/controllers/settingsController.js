@@ -3,23 +3,21 @@ const User = require('../models/User');
 
 exports.changePassword = async (req, res) => {
   const { currentPassword, newPassword } = req.body;
+  const userId = req.userId;
 
   try {
-    // Find user by ID from auth middleware
-    const user = await User.findByPk(req.userId);
+    const user = await User.findByPk(userId);
     if (!user) return res.status(404).json({ message: 'User not found' });
 
-    // Verify current password
     const isMatch = await bcrypt.compare(currentPassword, user.password);
-    if (!isMatch) return res.status(401).json({ message: 'Current password is incorrect' });
+    if (!isMatch) return res.status(400).json({ message: 'Current password is incorrect' });
 
-    // Hash and update password
-    const hashedPassword = await bcrypt.hash(newPassword, 10);
-    user.password = hashedPassword;
+    const hashed = await bcrypt.hash(newPassword, 10);
+    user.password = hashed;
     await user.save();
 
     res.json({ message: 'Password changed successfully' });
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    res.status(500).json({ message: 'Server error' });
   }
 };

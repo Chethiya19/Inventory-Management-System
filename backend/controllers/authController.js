@@ -2,12 +2,11 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
-// Helper: set JWT cookie
 const setTokenCookie = (res, token) => {
   res.cookie('token', token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production', // HTTPS only in prod
-    sameSite: 'Strict',
+    secure: false, // Set to true in production with HTTPS
+    sameSite: 'Lax',
     maxAge: 2 * 60 * 60 * 1000, // 2 hours
   });
 };
@@ -33,12 +32,8 @@ exports.login = async (req, res) => {
     if (!isMatch) return res.status(401).json({ message: 'Invalid credentials' });
 
     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '2h' });
-
-    // Set JWT token cookie (httpOnly)
     setTokenCookie(res, token);
-
-    // Also send token in JSON response (optional but often helpful)
-    res.json({ message: 'Login successful', user, token });
+    res.json({ message: 'Login successful', user });
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
