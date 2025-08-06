@@ -28,6 +28,7 @@ import { LowStockAlertsComponent } from './components/stock/low-stock-alerts/low
 
 import { BrandComponent } from './components/brand/brand.component';
 import { OrdersComponent } from './components/orders/orders.component';
+import { ReportComponent } from './components/report/report.component';
 import { SettingsComponent } from './components/settings/settings.component';
 
 
@@ -57,6 +58,7 @@ import { SettingsComponent } from './components/settings/settings.component';
     LowStockAlertsComponent,
     BrandComponent,
     OrdersComponent,
+    ReportComponent,
     SettingsComponent
   ],
   bootstrap: [AppComponent]

@@ -1,0 +1,47 @@
+<h2 class="report-title">📊 Stock {{ type === 'in' ? 'In' : 'Out' }} Report</h2>
+
+<div class="filters">
+  <div class="filter-group">
+    <label>Type:</label>
+    <select [(ngModel)]="type">
+      <option value="in">Stock In</option>
+      <option value="out">Stock Out</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label>Start Date:</label>
+    <input type="date" [(ngModel)]="startDate">
+  </div>
+  <div class="filter-group">
+    <label>End Date:</label>
+    <input type="date" [(ngModel)]="endDate">
+  </div>
+  <button (click)="fetchReport()">Generate</button>
+</div>
+
+<table class="report-table" *ngIf="reportData.length > 0">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Product</th>
+      <th>Brand</th>
+      <th>Model</th>
+      <th>Color</th>
+      <th>Storage</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of reportData">
+      <td>{{ item.createdAt | date:'short' }}</td>
+      <td>{{ item.Product.name }}</td>
+      <td>{{ item.Product.brand }}</td>
+      <td>{{ item.Product.model }}</td>
+      <td>{{ item.Product.color }}</td>
+      <td>{{ item.Product.storage }}</td>
+      <td>{{ item.quantity }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p *ngIf="reportData.length === 0" class="no-data">No records found for selected filters.</p>

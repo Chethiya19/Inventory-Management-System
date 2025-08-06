@@ -33,6 +33,7 @@ const productRoutes = require('./routes/productRoutes');
 const stockRoutes = require('./routes/stockRoutes');
 const brandRoutes = require('./routes/brandRoutes');
 const statsRoutes = require('./routes/stats');
+const reportRoutes = require('./routes/reportRoutes');
 const settingsRoutes = require('./routes/settingsRoutes');
 
 app.use('/api/auth', authRoutes);
@@ -40,6 +41,7 @@ app.use('/api/products', productRoutes);
 app.use('/api/stock', stockRoutes);
 app.use('/api/brands', brandRoutes);
 app.use('/api/stats', statsRoutes);
+app.use('/api/reports', reportRoutes);
 app.use('/api/settings', settingsRoutes);
 
 
