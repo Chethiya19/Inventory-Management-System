@@ -24,7 +24,7 @@ Built with the **(Angular, Node js, Express js, MySQL)**
 - Manage Stocks - in/out, low stock alerts
 - Manage Brands
 - Manage orders
-- Reports
+- Generate & Download Reports
 - Manage Profile deatials
 
 ## UI Desgin
