@@ -38,4 +38,8 @@ Built with the **(Angular, Node js, Express js, MySQL)**
 #### Stock Management 
 <img width="1365" height="630" alt="image" src="https://github.com/user-attachments/assets/5519d378-44d8-459b-89be-f22a7cf6f86c" />
 
+#### Stock Reports  
+<img width="1363" height="631" alt="image" src="https://github.com/user-attachments/assets/6c13617f-3361-4b13-9a86-a08a8a250368" />
+
+
 
