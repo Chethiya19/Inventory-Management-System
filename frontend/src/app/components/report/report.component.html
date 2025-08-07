@@ -10,13 +10,17 @@
   </div>
   <div class="filter-group">
     <label>Start Date:</label>
-    <input type="date" [(ngModel)]="startDate">
+    <input type="date" [(ngModel)]="startDate" />
   </div>
   <div class="filter-group">
     <label>End Date:</label>
-    <input type="date" [(ngModel)]="endDate">
+    <input type="date" [(ngModel)]="endDate" />
   </div>
+
   <button (click)="fetchReport()">Generate</button>
+  <button (click)="downloadPDF()" [disabled]="!startDate || !endDate || reportData.length === 0"
+    style="margin-left: 200px; background: #09b835;">Download PDF
+  </button>
 </div>
 
 <table class="report-table" *ngIf="reportData.length > 0">

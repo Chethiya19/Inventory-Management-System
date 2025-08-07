@@ -16,7 +16,7 @@ export class ReportComponent {
   endDate: string = '';
   reportData: any[] = [];
 
-  constructor(private reportService: ReportService) { }
+  constructor(private reportService: ReportService) {}
 
   fetchReport() {
     if (this.startDate && this.endDate) {
@@ -24,6 +24,12 @@ export class ReportComponent {
         .subscribe(data => {
           this.reportData = data;
         });
+    }
+  }
+
+  downloadPDF() {
+    if (this.startDate && this.endDate) {
+      this.reportService.downloadPDF(this.type, this.startDate, this.endDate);
     }
   }
 }
