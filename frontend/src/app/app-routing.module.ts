@@ -41,7 +41,7 @@ export const routes: Routes = [
       { path: 'brands', component: BrandComponent },
       { path: 'orders', component: OrdersComponent },
       { path: 'reports/stock-history', component: ReportComponent },
-      { path: 'settings', component: SettingsComponent }
+      { path: 'settings', component: SettingsComponent },
     ]
   }
 ];

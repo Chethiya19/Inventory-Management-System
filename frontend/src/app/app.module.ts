@@ -32,6 +32,7 @@ import { ReportComponent } from './components/report/report.component';
 import { SettingsComponent } from './components/settings/settings.component';
 
 
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -59,7 +60,7 @@ import { SettingsComponent } from './components/settings/settings.component';
     BrandComponent,
     OrdersComponent,
     ReportComponent,
-    SettingsComponent
+    SettingsComponent,
   ],
   bootstrap: [AppComponent]
 })

@@ -17,7 +17,7 @@ export class SettingsComponent {
   message = '';
   error = '';
 
-  constructor(private settingsService: SettingsService) {}
+  constructor(private settingsService: SettingsService) { }
 
   changePassword() {
     this.message = '';
@@ -39,8 +39,13 @@ export class SettingsComponent {
         this.confirmPassword = '';
       },
       error: (err) => {
-        this.error = err.error?.message || 'Something went wrong.';
-      },
+        const errorMsg = err.error?.message || 'Something went wrong.';
+        if (errorMsg.includes('Current password is incorrect')) {
+          this.error = 'Your current password is incorrect. Please try again.';
+        } else {
+          this.error = errorMsg;
+        }
+      }
     });
   }
 }
