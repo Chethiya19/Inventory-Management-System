@@ -23,6 +23,7 @@ export class LoginComponent {
     this.error = '';
     this.auth.login({ email: this.email, password: this.password }).subscribe({
       next: (res: any) => {
+        // username is already stored in AuthService.login() via tap()
         this.router.navigate(['/dashboard']);
       },
       error: (err) => {

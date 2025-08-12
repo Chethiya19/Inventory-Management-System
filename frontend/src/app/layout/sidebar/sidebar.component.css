@@ -17,7 +17,7 @@
 
 /* Main nav items */
 .main-nav > li {
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 /* Main nav links */
@@ -98,7 +98,7 @@
 .dropdown-submenu {
   list-style: none;
   padding-left: 0px;
-  margin: 8px 20px 8px 30px;
+  margin: 0 20px 0 30px;
   background-color: #1a252f;
   border-radius: 6px;
   box-shadow: inset 2px 2px 6px rgba(0,0,0,0.3);

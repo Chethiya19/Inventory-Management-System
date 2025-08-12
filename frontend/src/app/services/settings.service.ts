@@ -10,16 +10,19 @@ export class SettingsService {
 
   changePassword(data: { currentPassword: string; newPassword: string }): Observable<any> {
     return this.http.post(`${this.apiUrl}/change-password`, data, {
-      withCredentials: true, // important for cookie
+      withCredentials: true, // include cookie for auth
     });
   }
 
   sendResetCode(email: string): Observable<any> {
-    return this.http.post(`${this.apiUrl}/forgot-password/send-code`, { email });
+    return this.http.post(`${this.apiUrl}/forgot-password/send-code`, { email }, {
+      withCredentials: true, // include cookie if this endpoint requires auth
+    });
   }
 
   verifyCodeAndReset(data: { email: string; code: string; newPassword: string }): Observable<any> {
-    return this.http.post(`${this.apiUrl}/forgot-password/verify`, data);
+    return this.http.post(`${this.apiUrl}/forgot-password/verify`, data, {
+      withCredentials: true, // include cookie if this endpoint requires auth
+    });
   }
-
 }

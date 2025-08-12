@@ -17,18 +17,18 @@ export class BrandService {
   constructor(private http: HttpClient) {}
 
   getBrands(): Observable<Brand[]> {
-    return this.http.get<Brand[]>(this.baseUrl);
+    return this.http.get<Brand[]>(this.baseUrl, { withCredentials: true });
   }
 
   addBrand(brand: Brand): Observable<any> {
-    return this.http.post(`${this.baseUrl}/add`, brand);
+    return this.http.post(`${this.baseUrl}/add`, brand, { withCredentials: true });
   }
 
   updateBrand(id: number, brand: Brand): Observable<any> {
-    return this.http.put(`${this.baseUrl}/${id}`, brand);
+    return this.http.put(`${this.baseUrl}/${id}`, brand, { withCredentials: true });
   }
 
   deleteBrand(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${id}`);
+    return this.http.delete(`${this.baseUrl}/${id}`, { withCredentials: true });
   }
 }

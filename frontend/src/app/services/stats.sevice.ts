@@ -16,6 +16,6 @@ export class StatsService {
   constructor(private http: HttpClient) {}
 
   getCounts(): Observable<Counts> {
-    return this.http.get<Counts>(this.apiUrl);
+    return this.http.get<Counts>(this.apiUrl, { withCredentials: true }); // include cookies for auth
   }
 }

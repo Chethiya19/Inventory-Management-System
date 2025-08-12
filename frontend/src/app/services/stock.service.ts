@@ -34,31 +34,31 @@ export class StockService {
 
   // Get all products with stock quantity
   getAllProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.apiUrl}/`);
+    return this.http.get<Product[]>(`${this.apiUrl}/`, { withCredentials: true });
   }
 
   // Add stock
   stockIn(productId: number, quantity: number): Observable<any> {
-    return this.http.post(`${this.apiUrl}/in`, { productId, quantity });
+    return this.http.post(`${this.apiUrl}/in`, { productId, quantity }, { withCredentials: true });
   }
 
   // Remove stock
   stockOut(productId: number, quantity: number): Observable<any> {
-    return this.http.post(`${this.apiUrl}/out`, { productId, quantity });
+    return this.http.post(`${this.apiUrl}/out`, { productId, quantity }, { withCredentials: true });
   }
 
   // Get products with low stock
   getLowStockAlerts(): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.apiUrl}/alerts`);
+    return this.http.get<Product[]>(`${this.apiUrl}/alerts`, { withCredentials: true });
   }
 
   // Get stock in history
   getStockInHistory(): Observable<StockHistory[]> {
-    return this.http.get<StockHistory[]>(`${this.apiUrl}/history/in`);
+    return this.http.get<StockHistory[]>(`${this.apiUrl}/history/in`, { withCredentials: true });
   }
 
   // (Optional) Add if needed later: Get stock out history
   getStockOutHistory(): Observable<StockHistory[]> {
-    return this.http.get<StockHistory[]>(`${this.apiUrl}/history/out`);
+    return this.http.get<StockHistory[]>(`${this.apiUrl}/history/out`, { withCredentials: true });
   }
 }

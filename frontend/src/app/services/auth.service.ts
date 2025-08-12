@@ -14,17 +14,16 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
 
   register(userData: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/register`, userData, {
-      withCredentials: true,
-    });
+    return this.http.post(`${this.apiUrl}/register`, userData, { withCredentials: true });
   }
 
   login(credentials: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/login`, credentials, {
-      withCredentials: true,
-    }).pipe(
+    return this.http.post(`${this.apiUrl}/login`, credentials, { withCredentials: true }).pipe(
       tap((res: any) => {
-        this.setUsername(res.user.username);
+        // Ensure username is stored before navigation
+        if (res?.user?.username) {
+          this.setUsername(res.user.username);
+        }
       })
     );
   }
@@ -50,7 +49,7 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    return !!localStorage.getItem('username'); // Since no token, rely on presence of username
+    return !!localStorage.getItem('username');
   }
 
   clearSession(): void {

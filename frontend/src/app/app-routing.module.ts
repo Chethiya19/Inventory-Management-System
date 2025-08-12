@@ -19,6 +19,7 @@ import { BrandComponent } from './components/brand/brand.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { ReportComponent } from './components/report/report.component';
 import { SettingsComponent } from './components/settings/settings.component';
+import { ChartComponent } from './components/chart/chart.component';
 
 import { AuthGuard } from './guards/auth.guard';
 
@@ -42,6 +43,7 @@ export const routes: Routes = [
       { path: 'orders', component: OrdersComponent },
       { path: 'reports/stock-history', component: ReportComponent },
       { path: 'settings', component: SettingsComponent },
+      { path: 'charts', component: ChartComponent },
     ]
   }
 ];

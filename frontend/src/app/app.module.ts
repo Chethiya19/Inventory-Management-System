@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';       // For *ngFor etc.
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';         // For [(ngModel)]
 import { HttpClientModule } from '@angular/common/http';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -30,7 +31,7 @@ import { BrandComponent } from './components/brand/brand.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { ReportComponent } from './components/report/report.component';
 import { SettingsComponent } from './components/settings/settings.component';
-
+import { ChartComponent } from './components/chart/chart.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { SettingsComponent } from './components/settings/settings.component';
     FormsModule,        // Needed for ngModel binding
     RouterModule,
     ReactiveFormsModule,
+    NgApexchartsModule,
 
     // Standalone components imported here
     AppComponent,
@@ -61,6 +63,7 @@ import { SettingsComponent } from './components/settings/settings.component';
     OrdersComponent,
     ReportComponent,
     SettingsComponent,
+    ChartComponent,
   ],
   bootstrap: [AppComponent]
 })

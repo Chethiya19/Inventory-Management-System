@@ -32,9 +32,10 @@ const authRoutes = require('./routes/authRoutes');
 const productRoutes = require('./routes/productRoutes');
 const stockRoutes = require('./routes/stockRoutes');
 const brandRoutes = require('./routes/brandRoutes');
-const statsRoutes = require('./routes/stats');
+const statsRoutes = require('./routes/statsRoutes');
 const reportRoutes = require('./routes/reportRoutes');
 const settingsRoutes = require('./routes/settingsRoutes');
+const chartRoutes = require('./routes/chartRoutes');
 
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
@@ -43,6 +44,7 @@ app.use('/api/brands', brandRoutes);
 app.use('/api/stats', statsRoutes);
 app.use('/api/reports', reportRoutes);
 app.use('/api/settings', settingsRoutes);
+app.use('/api/charts', chartRoutes);
 
 
 // ====== DB SYNC & SERVER START ======
