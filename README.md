@@ -23,9 +23,9 @@ Built with the **(Angular, Node js, Express js, MySQL)**
 - Manage Products
 - Manage Stocks - in/out, low stock alerts
 - Manage Brands
-- Manage orders
+- Manage Orders
 - Generate & Download Reports
-- View Bar Chart Stock by Brand 
+- View Bar Chart Stock by Brand also Download as a PNG
 - Manage Profile deatials
 
 ## UI Desgin
