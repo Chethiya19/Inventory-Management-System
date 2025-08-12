@@ -24,7 +24,7 @@ Built with the **(Angular, Node js, Express js, MySQL)**
 - Manage Stocks - in/out, low stock alerts
 - Manage Brands
 - Manage orders
-- Reports
+- Generate & Download Reports
 - Manage Profile deatials
 
 ## UI Desgin
@@ -37,5 +37,9 @@ Built with the **(Angular, Node js, Express js, MySQL)**
 
 #### Stock Management 
 <img width="1365" height="630" alt="image" src="https://github.com/user-attachments/assets/5519d378-44d8-459b-89be-f22a7cf6f86c" />
+
+#### Stock Reports  
+<img width="1365" height="629" alt="image" src="https://github.com/user-attachments/assets/e3fededc-823b-4772-99de-77124d749fec" />
+
 
 
