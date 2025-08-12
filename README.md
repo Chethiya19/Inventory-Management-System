@@ -26,7 +26,7 @@ Built with the **(Angular, Node js, Express js, MySQL)**
 - Manage Orders
 - Generate & Download Reports
 - View Bar Chart Stock by Brand also Download as a PNG, SVG & CSV
-- Manage Profile deatials
+- Manage Profile details
 
 ## UI Desgin
 
