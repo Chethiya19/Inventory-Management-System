@@ -1,15 +1,15 @@
 # Inventory-Management-System
-**Inventory Management System of Mobile Phones**  
+**Inventory Management System of Mobile Phones**
 Built with the **(Angular, Node js, Express js, MySQL)**
 
 ## Tech Stack
 
-**Frontend**  
+**Frontend**
 - Angular  
 - TypeScrpit
 - CSS Modules
 
-**Backend**  
+**Backend**
 - Node.js  
 - Express.js  
 - MySQL 
@@ -23,9 +23,10 @@ Built with the **(Angular, Node js, Express js, MySQL)**
 - Manage Products
 - Manage Stocks - in/out, low stock alerts
 - Manage Brands
-- Manage orders
+- Manage Orders
 - Generate & Download Reports
-- Manage Profile deatials
+- View Bar Chart Stock by Brand also Download as a PNG, SVG & CSV
+- Manage Profile details
 
 ## UI Desgin
 
@@ -35,11 +36,13 @@ Built with the **(Angular, Node js, Express js, MySQL)**
 #### Products Management
 <img width="1365" height="628" alt="image" src="https://github.com/user-attachments/assets/69ca7a99-714a-44db-85f1-7659390335cd" />
 
-#### Stock Management 
+#### Stock Management
 <img width="1365" height="630" alt="image" src="https://github.com/user-attachments/assets/5519d378-44d8-459b-89be-f22a7cf6f86c" />
 
-#### Stock Reports  
+#### Stock Reports
 <img width="1365" height="629" alt="image" src="https://github.com/user-attachments/assets/e3fededc-823b-4772-99de-77124d749fec" />
 
+#### Stock Charts
+<img width="1365" height="630" alt="image" src="https://github.com/user-attachments/assets/6fc5a508-7c97-4100-93cb-e012bbd60e3e" />
 
 
