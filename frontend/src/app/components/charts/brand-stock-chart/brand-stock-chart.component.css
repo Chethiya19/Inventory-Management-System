@@ -1,0 +1,9 @@
+canvas {
+  max-width: 100%;
+}
+/* Optional styling */
+:host {
+  display: block;
+  max-width: 1000px;
+  margin: 10px auto;
+}

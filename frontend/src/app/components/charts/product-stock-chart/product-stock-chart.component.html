@@ -1,0 +1,14 @@
+<div *ngIf="chartOptions.series[0].data.length > 0; else loading">
+  <h3>Stock by Product</h3>
+  <apx-chart
+    [series]="chartOptions.series"
+    [chart]="chartOptions.chart"
+    [plotOptions]="chartOptions.plotOptions"
+    [dataLabels]="chartOptions.dataLabels"
+    [xaxis]="chartOptions.xaxis"
+  ></apx-chart>
+</div>
+
+<ng-template #loading>
+  <p>Loading product stock chart...</p>
+</ng-template>

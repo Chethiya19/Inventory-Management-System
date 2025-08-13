@@ -21,6 +21,10 @@ import { ReportComponent } from './components/report/report.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { ChartComponent } from './components/chart/chart.component';
 
+import { ChartLayoutComponent } from './components/charts/chart-layout/chart-layout.component';
+import { BrandStockChartComponent } from './components/charts/brand-stock-chart/brand-stock-chart.component';
+import { ProductStockChartComponent } from './components/charts/product-stock-chart/product-stock-chart.component';
+
 import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
@@ -43,7 +47,16 @@ export const routes: Routes = [
       { path: 'orders', component: OrdersComponent },
       { path: 'reports/stock-history', component: ReportComponent },
       { path: 'settings', component: SettingsComponent },
-      { path: 'charts', component: ChartComponent },
+      // { path: 'charts', component: ChartComponent },
+      {
+      path: 'charts',
+      component: ChartLayoutComponent,  // container for navbar + charts
+      children: [
+        { path: '', redirectTo: 'brand-stock', pathMatch: 'full' },
+        { path: 'brand-stock', component: BrandStockChartComponent },
+        { path: 'product-stock', component: ProductStockChartComponent },
+      ]
+    },
     ]
   }
 ];

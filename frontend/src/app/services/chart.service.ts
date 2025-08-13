@@ -4,7 +4,12 @@ import { Observable } from 'rxjs';
 
 export interface BrandStock {
   brand: string;
-  total_stock: string; // backend returns string, we convert later
+  total_stock: string;
+}
+
+export interface ProductStock {
+  name: string;
+  stock_qty: number;
 }
 
 @Injectable({
@@ -17,5 +22,9 @@ export class ChartService {
 
   getBrandStock(): Observable<BrandStock[]> {
     return this.http.get<BrandStock[]>(`${this.baseUrl}/brand-stock`, { withCredentials: true });
+  }
+
+  getProductStock(): Observable<ProductStock[]> {
+    return this.http.get<ProductStock[]>(`${this.baseUrl}/product-stock`, { withCredentials: true });
   }
 }

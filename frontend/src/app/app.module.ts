@@ -31,7 +31,12 @@ import { BrandComponent } from './components/brand/brand.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { ReportComponent } from './components/report/report.component';
 import { SettingsComponent } from './components/settings/settings.component';
-import { ChartComponent } from './components/chart/chart.component';
+// import { ChartComponent } from './components/chart/chart.component';
+
+import { ChartLayoutComponent } from './components/charts/chart-layout/chart-layout.component';
+import { NavbarComponent } from './components/charts/navbar/navbar.component';
+import { BrandStockChartComponent } from './components/charts/brand-stock-chart/brand-stock-chart.component';
+import { ProductStockChartComponent } from './components/charts/product-stock-chart/product-stock-chart.component';
 
 
 @NgModule({
@@ -63,7 +68,11 @@ import { ChartComponent } from './components/chart/chart.component';
     OrdersComponent,
     ReportComponent,
     SettingsComponent,
-    ChartComponent,
+    // ChartComponent,
+    ChartLayoutComponent,
+    NavbarComponent,
+    ProductStockChartComponent,
+    BrandStockChartComponent,
   ],
   bootstrap: [AppComponent]
 })

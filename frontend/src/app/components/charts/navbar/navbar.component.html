@@ -1,0 +1,15 @@
+<nav class="navbar">
+  <ul class="nav-list">
+    <li class="nav-item"
+        [class.active]="isActive('/charts/brand-stock')"
+        (click)="navigate('/charts/brand-stock')">
+      Brand Stock Chart
+    </li>
+
+    <li class="nav-item"
+        [class.active]="isActive('/charts/product-stock')"
+        (click)="navigate('/charts/product-stock')">
+      Product Stock Chart
+    </li>
+  </ul>
+</nav>
