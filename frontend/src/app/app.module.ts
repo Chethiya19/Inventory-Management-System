@@ -31,7 +31,6 @@ import { BrandComponent } from './components/brand/brand.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { ReportComponent } from './components/report/report.component';
 import { SettingsComponent } from './components/settings/settings.component';
-// import { ChartComponent } from './components/chart/chart.component';
 
 import { ChartLayoutComponent } from './components/charts/chart-layout/chart-layout.component';
 import { NavbarComponent } from './components/charts/navbar/navbar.component';
@@ -68,11 +67,10 @@ import { ProductStockChartComponent } from './components/charts/product-stock-ch
     OrdersComponent,
     ReportComponent,
     SettingsComponent,
-    // ChartComponent,
     ChartLayoutComponent,
     NavbarComponent,
-    ProductStockChartComponent,
     BrandStockChartComponent,
+    ProductStockChartComponent,
   ],
   bootstrap: [AppComponent]
 })

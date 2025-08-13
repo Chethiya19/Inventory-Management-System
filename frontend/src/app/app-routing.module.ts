@@ -19,7 +19,6 @@ import { BrandComponent } from './components/brand/brand.component';
 import { OrdersComponent } from './components/orders/orders.component';
 import { ReportComponent } from './components/report/report.component';
 import { SettingsComponent } from './components/settings/settings.component';
-import { ChartComponent } from './components/chart/chart.component';
 
 import { ChartLayoutComponent } from './components/charts/chart-layout/chart-layout.component';
 import { BrandStockChartComponent } from './components/charts/brand-stock-chart/brand-stock-chart.component';
@@ -47,10 +46,9 @@ export const routes: Routes = [
       { path: 'orders', component: OrdersComponent },
       { path: 'reports/stock-history', component: ReportComponent },
       { path: 'settings', component: SettingsComponent },
-      // { path: 'charts', component: ChartComponent },
       {
       path: 'charts',
-      component: ChartLayoutComponent,  // container for navbar + charts
+      component: ChartLayoutComponent,
       children: [
         { path: '', redirectTo: 'brand-stock', pathMatch: 'full' },
         { path: 'brand-stock', component: BrandStockChartComponent },
