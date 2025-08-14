@@ -23,6 +23,7 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { ChartLayoutComponent } from './components/charts/chart-layout/chart-layout.component';
 import { BrandStockChartComponent } from './components/charts/brand-stock-chart/brand-stock-chart.component';
 import { ProductStockChartComponent } from './components/charts/product-stock-chart/product-stock-chart.component';
+import { PriceRangeChartComponent } from  './components/charts/price-range-chart/price-range-chart.component';
 
 import { AuthGuard } from './guards/auth.guard';
 
@@ -53,6 +54,7 @@ export const routes: Routes = [
         { path: '', redirectTo: 'brand-stock', pathMatch: 'full' },
         { path: 'brand-stock', component: BrandStockChartComponent },
         { path: 'product-stock', component: ProductStockChartComponent },
+        { path: 'price-range', component: PriceRangeChartComponent },
       ]
     },
     ]

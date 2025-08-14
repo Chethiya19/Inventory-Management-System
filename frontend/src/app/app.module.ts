@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';       // For *ngFor etc.
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';         // For [(ngModel)]
 import { HttpClientModule } from '@angular/common/http';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -36,6 +37,7 @@ import { ChartLayoutComponent } from './components/charts/chart-layout/chart-lay
 import { NavbarComponent } from './components/charts/navbar/navbar.component';
 import { BrandStockChartComponent } from './components/charts/brand-stock-chart/brand-stock-chart.component';
 import { ProductStockChartComponent } from './components/charts/product-stock-chart/product-stock-chart.component';
+import { PriceRangeChartComponent } from  './components/charts/price-range-chart/price-range-chart.component';
 
 
 @NgModule({
@@ -48,6 +50,7 @@ import { ProductStockChartComponent } from './components/charts/product-stock-ch
     RouterModule,
     ReactiveFormsModule,
     NgApexchartsModule,
+    NgxSliderModule,
 
     // Standalone components imported here
     AppComponent,
@@ -71,6 +74,7 @@ import { ProductStockChartComponent } from './components/charts/product-stock-ch
     NavbarComponent,
     BrandStockChartComponent,
     ProductStockChartComponent,
+    PriceRangeChartComponent,
   ],
   bootstrap: [AppComponent]
 })

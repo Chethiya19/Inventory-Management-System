@@ -1,0 +1,140 @@
+#chart {
+  margin: 10px 40px;
+}
+
+.line {
+  width: 90%;
+  margin: 10px auto;
+  border: 1px solid #5a5a5a;
+}
+
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.product-table thead {
+  background: linear-gradient(90deg, #4b79a1, #283e51);
+  color: #fff;
+}
+
+.product-table th, 
+.product-table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.product-table tbody tr {
+  background-color: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.product-table tbody tr:nth-child(even) {
+  background-color: #e8f0f8;
+}
+
+.product-table tbody tr:hover {
+  background-color: #d1e7ff;
+  transform: scale(1.01);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.product-table th {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.product-table td {
+  font-weight: 500;
+}
+
+h3 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.range-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  background: #f4f6f8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+  margin-left: 21%;
+  align-items: center;
+}
+
+.range-selector label {
+  font-weight: 600;
+  color: #333;
+  font-weight: bold;
+}
+
+.range-inputs {
+  display: flex;
+  gap: 10px;
+}
+
+.range-inputs input[type="range"] {
+  width: 180px;
+  cursor: pointer;
+  appearance: none;
+  height: 6px;
+  background: #ddd;
+  border-radius: 4px;
+  outline: none;
+}
+
+.range-inputs input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  height: 14px;
+  width: 14px;
+  background: #4b79a1;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.range-inputs input[type="range"]::-webkit-slider-thumb:hover {
+  background: #283e51;
+}
+
+.range-selector button {
+  background: #4b79a1;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+  margin: auto 180px;
+}
+
+.range-selector button:hover {
+  background: #283e51;
+}
+
+.range-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.range-row label {
+  width: 40px;
+  font-weight: bold;
+}

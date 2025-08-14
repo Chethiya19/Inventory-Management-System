@@ -11,5 +11,11 @@
         (click)="navigate('/charts/product-stock')">
       Product Stock Chart
     </li>
+
+    <li class="nav-item"
+        [class.active]="isActive('/charts/price-range')"
+        (click)="navigate('/charts/price-range')">
+      Products By Price Range
+    </li>
   </ul>
 </nav>

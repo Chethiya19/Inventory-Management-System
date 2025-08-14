@@ -1,0 +1,62 @@
+<div id="chart">
+  <h3>Products by Price Range</h3>
+  <apx-chart 
+    [series]="chartOptions.series" 
+    [chart]="chartOptions.chart" 
+    [xaxis]="chartOptions.xaxis"
+    [dataLabels]="chartOptions.dataLabels" 
+    [title]="chartOptions.title">
+  </apx-chart>
+</div>
+
+<hr class="line">
+
+<div class="range-selector">
+  <label>
+    Price Range:
+    <span>{{ selectedMin | currency:'LKR':'symbol' }} - {{ selectedMax | currency:'LKR':'symbol' }}</span>
+  </label>
+
+  <div class="range-inputs">
+    <div class="range-row">
+      <label for="minRange">Min</label>
+      <input id="minRange" type="range" min="0" max="500000" step="5000" [(ngModel)]="selectedMin">
+    </div>
+
+    <div class="range-row" style="padding-left: 60px;">
+      <label for="maxRange">Max</label>
+      <input id="maxRange" type="range" min="0" max="500000" step="5000" [(ngModel)]="selectedMax">
+    </div>
+  </div>
+
+  <button (click)="filterByRange()">Filter</button>
+</div>
+
+
+<div *ngIf="products.length > 0" style="margin-top:30px;">
+  <h3>Products in Selected Range</h3>
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Storage</th>
+        <th>Color</th>
+        <th>Price</th>
+        <th>Stock Qty</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of products">
+        <td>{{ p.name }}</td>
+        <td>{{ p.brand }}</td>
+        <td>{{ p.model }}</td>
+        <td>{{ p.storage }}</td>
+        <td>{{ p.color }}</td>
+        <td>{{ p.price | currency:'LKR ':'symbol' }}</td>
+        <td>{{ p.stock_qty }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
