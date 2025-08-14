@@ -32,7 +32,7 @@ Built with the **(Angular, Node js, Express js, MySQL)**
   - Stock by Product
   - Products by Price Range
 - Filter Products in Selected Price Range
-- Manage Profile details
+- Manage Profile details (Change Password)
 
 ## UI Desgin
 
