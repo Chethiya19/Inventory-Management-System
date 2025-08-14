@@ -25,7 +25,7 @@ Built with the **(Angular, Node js, Express js, MySQL)**
 - Manage Brands
 - Manage Orders
 - Generate & Download Reports
-- View Bar Chart Stock by Brand also Download as a PNG, SVG & CSV
+- View Bar Chart (Brand & Product) and also Download as a PNG, SVG & CSV
 - Manage Profile details
 
 ## UI Desgin
@@ -43,6 +43,9 @@ Built with the **(Angular, Node js, Express js, MySQL)**
 <img width="1365" height="629" alt="image" src="https://github.com/user-attachments/assets/e3fededc-823b-4772-99de-77124d749fec" />
 
 #### Stock Charts
-<img width="1365" height="630" alt="image" src="https://github.com/user-attachments/assets/6fc5a508-7c97-4100-93cb-e012bbd60e3e" />
+<img width="1365" height="630" alt="image" src="https://github.com/user-attachments/assets/46fe787b-8cb4-4368-8ec2-edd81f1fbb3d" />
+
+<img width="1365" height="632" alt="image" src="https://github.com/user-attachments/assets/d4dd95b3-9199-447c-9893-dc2428f25dc2" />
+
 
 
