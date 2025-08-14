@@ -53,5 +53,8 @@ Built with the **(Angular, Node js, Express js, MySQL)**
 
 <img width="1365" height="632" alt="image" src="https://github.com/user-attachments/assets/d4dd95b3-9199-447c-9893-dc2428f25dc2" />
 
+<img width="1365" height="601" alt="image" src="https://github.com/user-attachments/assets/3cbfaaa6-8419-48a2-83b2-b7c504ed6207" />
+
+<img width="1365" height="633" alt="image" src="https://github.com/user-attachments/assets/59efc0d8-1816-49e0-b9e2-3103a0400081" />
 
 
