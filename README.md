@@ -20,7 +20,7 @@ Built with the **(Angular, Node js, Express js, MySQL)**
 
 ## 🧩 Features
 
-- Manage Products
+- Manage Products (Mobile Phones)
 - Manage Stocks
   - Stock In/Out tracking
   - Low stock alerts
