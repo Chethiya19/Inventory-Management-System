@@ -21,11 +21,17 @@ Built with the **(Angular, Node js, Express js, MySQL)**
 ## 🧩 Features
 
 - Manage Products
-- Manage Stocks - in/out, low stock alerts
+- Manage Stocks
+  - Stock In/Out tracking
+  - Low stock alerts
 - Manage Brands
 - Manage Orders
 - Generate & Download Reports
-- View Bar Chart (Brand & Product) and also Download as a PNG, SVG & CSV
+- Bar Chart View and Download as a PNG, SVG & CSV
+  - Stock by Brand
+  - Stock by Product
+  - Products by Price Range
+- Filter Products in Selected Price Range
 - Manage Profile details
 
 ## UI Desgin
